@@ -1,16 +1,16 @@
-# ARToolKit Camera Calibration Server
+# artoolkitX Camera Calibration Server
 
-This is a set of webapps that allow the user to run their own server of ARToolKit camera calibration parameters. This, along with apps to generate calibrations, and the runtime client component, constitute a system for distributed camera calibration generation and retrieval.
+This is a set of webapps that allow the user to run their own server of artoolkitX camera calibration parameters. This, along with apps to generate calibrations, and the runtime client component, constitute a system for distributed camera calibration generation and retrieval.
 
 ## Why is this useful?
-Accurate knowledge of the intrinsic optical properties of the camera in an AR system is critical to robust tracking. ARToolKit includes an offline calibration process to calculate the intrinsic properties. The calibration tool produces a calibration file, which can be substituted into the ARToolKit runtime file system to improve tracking. However, this tool is not intended for use by untrained users, and if performed by the app developer, provides no way for the developer to provide add support for devices after the app is published.
+Accurate knowledge of the intrinsic optical properties of the camera in an AR system is critical to robust tracking. artoolkitX includes an offline calibration process to calculate the intrinsic properties. The calibration tool produces a calibration file, which can be substituted into the artoolkitX runtime file system to improve tracking. However, this tool is not intended for use by untrained users, and if performed by the app developer, provides no way for the developer to provide add support for devices after the app is published.
 
-ARToolKit already provides a function whereby it queriess a server for calibration data for the device on which it is running, but previously, users had to depend on the server component run by the ARToolKit project administrators. With these webapps, an app developer can run their own calibration server, and using the calibration apps (available separately) upload their own calibration data to it. They can then configure the ARToolKit runtime to retrieve calibrations from that server.
+artoolkitX already provides a function whereby it queriess a server for calibration data for the device on which it is running, but previously, users had to depend on the server component run by the artoolkitX project administrators. With these webapps, an app developer can run their own calibration server, and using the calibration apps (available separately) upload their own calibration data to it. They can then configure the artoolkitX runtime to retrieve calibrations from that server.
 
 This allows app developers to have a greater degree of control over the end-user experience.
 
 ## Setup
-The webapps are designed to run on a simple PHP+MySQL stack. Once copied onto your web server, you need to edit the file `server_data.php`, adding the details for your database server and user, and choosing a token which clients wanting to upload calibrations to your server will need to know. For security reasons, no upload token has been presupplied. The download token is set to the default token in the ARToolKit source, but you might wish to edit this if you want to prevent other users from using your calibration server.
+The webapps are designed to run on a simple PHP+MySQL stack. Once copied onto your web server, you need to edit the file `server_data.php`, adding the details for your database server and user, and choosing a token which clients wanting to upload calibrations to your server will need to know. For security reasons, no upload token has been presupplied. The download token is set to the default token in the artoolkitX source, but you might wish to edit this if you want to prevent other users from using your calibration server.
 
 ## FAQs
 **Q: Why this distributed approach? Why not automatic calibration?**
@@ -27,6 +27,6 @@ A: No. By default, retrieval of calibration data by ARToolKit is done over an en
 
 Philip Lamb
 
-2017-09-28
+2018-08-10
 
 
