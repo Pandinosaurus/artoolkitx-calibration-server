@@ -111,7 +111,7 @@ if (!isset($_REQUEST['version'])) {
 	bailWithMessage("400 Bad Request", "Missing parameter.");
 }
 
-if ($_REQUEST['version'] === '1') {
+if ($_REQUEST['version'] === '1' || $_REQUEST['version'] === '2') {
 	// Structure of record for a given file with form name 'files':
 	// $_FILES['file']['name'] The original name of the file on the client machine.
 	// $_FILES['file']['type'] The mime type of the file, if the browser provided this information.
@@ -135,7 +135,7 @@ if ($_REQUEST['version'] === '1') {
 	
 	// Check that it's the right length for a camera_para.dat file.
 	// Used to also check ( substr($_FILES['file']['name'], -15) === 'camera_para.dat' )
-	if ( !($_FILES['file']['size'] === 176) ) {
+	if ( !($_FILES['file']['size'] === 176 || ($_REQUEST['version'] === '2' && $_FILES['file']['size'] === 240)) ) {
 		bailWithMessage("400 Bad Request", "Not a camera parameter file.");
 	}
 	
